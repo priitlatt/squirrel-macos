@@ -22,7 +22,7 @@ workflows:
       - keychain add-certificates --allow-all-applications
       - xcode-project use-profiles
       - name: Build project
-        script: xcodebuild build -project squirrel/squirrel.xcodeproj
+        script: xcodebuild build -project squirrel/squirrel.xcodeproj CODE_SIGN_IDENTITY='' CODE_SIGNING_REQUIRED='no'
       - name: Package application
         script: |
           BUILD_DIR="squirrel/build"
