@@ -20,7 +20,6 @@ workflows:
       - name: Get Mac Installer Distribution Certificate
         script: app-store-connect get-certificate Z7WH64D3G4 --save
       - keychain add-certificates --allow-all-applications
-      - xcode-project use-profiles
       - name: Build project
         script: xcodebuild build -project squirrel/squirrel.xcodeproj CODE_SIGN_IDENTITY='' CODE_SIGNING_REQUIRED='no'
       - name: Package application
